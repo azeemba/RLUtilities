@@ -275,7 +275,7 @@ void Car::step(Input in, float dt) {
   // driving
   if (on_ground) {
     if (in.jump == 1) {
-      // std::cout << time << " Jump" << std::endl;
+       std::cout << time << " Jump" << std::endl;
       jump(in, dt);
     } else {
       if (in.handbrake == 0) {
@@ -289,10 +289,10 @@ void Car::step(Input in, float dt) {
   } else {
     if (in.jump == 1 && controls.jump == 0 && jump_timer < Dodge::timeout &&
         double_jumped == false) {
-      // std::cout << time << " Air Dodge" << std::endl;
+       std::cout << time << " Air Dodge" << std::endl;
       air_dodge(in, dt);
     } else {
-      // std::cout << "Aerial Control" << std::endl;
+       std::cout << "Aerial Control" << std::endl;
       aerial_control(in, dt);
     }
   }
