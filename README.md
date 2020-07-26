@@ -1,3 +1,10 @@
+# VERSION USED BY INVISIBOT
+
+There may be changes missing in upstream and there 
+may be changes missing from upstream. This branch
+justs exists to be able to reproduce the python
+module being used in [invisibot](https://github.com/azeemba/invisibot)
+
 # Overview
 
 This project aims to provide a way for members of the RLBot community to contribute

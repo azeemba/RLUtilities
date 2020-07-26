@@ -64,6 +64,12 @@ void Car::air_dodge(const Input& in, float dt) {
 
     vec2 dv = 500.0f * dodge_dir;
 
+    auto theta = rotation_to_euler(orientation)[1];
+    o_dodge = {
+             {cos(theta), -sin(theta)},
+             { sin(theta), cos(theta) }
+    };
+
     if (backward_dodge) {
       dv[0] *= (16.0f / 15.0f) * (1.0f + 1.5f * s);
     }
@@ -72,8 +78,8 @@ void Car::air_dodge(const Input& in, float dt) {
     velocity += g * dt + vec3(dot(o_dodge, dv));
     position += velocity * dt;
 
-    angular_velocity += dodge_torque * dt;
     orientation = dot(axis_to_rotation(angular_velocity * dt), orientation);
+    angular_velocity += dodge_torque * dt;
 
     double_jumped = true;
     dodge_timer = 0.0f;
@@ -275,7 +281,7 @@ void Car::step(Input in, float dt) {
   // driving
   if (on_ground) {
     if (in.jump == 1) {
-       std::cout << time << " Jump" << std::endl;
+       //std::cout << time << " Jump" << std::endl;
       jump(in, dt);
     } else {
       if (in.handbrake == 0) {
@@ -289,10 +295,10 @@ void Car::step(Input in, float dt) {
   } else {
     if (in.jump == 1 && controls.jump == 0 && jump_timer < Dodge::timeout &&
         double_jumped == false) {
-       std::cout << time << " Air Dodge" << std::endl;
+       //std::cout << time << " Air Dodge" << std::endl;
       air_dodge(in, dt);
     } else {
-       std::cout << "Aerial Control" << std::endl;
+       //std::cout << "Aerial Control" << std::endl;
       aerial_control(in, dt);
     }
   }
