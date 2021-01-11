@@ -35,7 +35,7 @@ PYBIND11_MODULE(rlutilities, m) {
 	init_geometry(simulation);
 	init_curve(simulation);
 	init_game(simulation);
-	init_navigator(simulation);
+	//init_navigator(simulation);
 
   pybind11::module mechanics = m.def_submodule("mechanics");
 	init_jump(mechanics);
@@ -46,7 +46,7 @@ PYBIND11_MODULE(rlutilities, m) {
 	init_boostdash(mechanics);
   init_reorient(mechanics);
   init_reorient_ML(mechanics);
-	init_followpath(mechanics);
+	//init_followpath(mechanics);
 
   pybind11::module linear_algebra = m.def_submodule("linear_algebra");
 	init_linalg(linear_algebra);

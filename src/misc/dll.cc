@@ -137,11 +137,12 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpReserved) {
           load_resource<int>(hinstDLL, THROWBACK_CORNER_WALL_2_IDS),
           load_resource<float>(hinstDLL, THROWBACK_CORNER_WALL_2_VERTICES));
 
+      /*
       Navigator::init_statics(
           load_resource<Graph::edge>(hinstDLL, SOCCAR_NAV_GRAPH),
           load_resource<vec3>(hinstDLL, SOCCAR_NAV_NODES),
           load_resource<vec3>(hinstDLL, SOCCAR_NAV_NORMALS));
-
+      */
       ReorientML::set_model(
           Model(load_resource<float>(hinstDLL, REORIENT_ML_MODEL)));
       // clang-format on

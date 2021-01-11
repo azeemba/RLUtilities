@@ -9,9 +9,6 @@ SOCCAR_RAMPS_0_VERTICES BINARY_FILE soccar/soccar_ramps_0_vertices.bin
 SOCCAR_RAMPS_1_IDS BINARY_FILE soccar/soccar_ramps_1_ids.bin
 SOCCAR_RAMPS_1_VERTICES BINARY_FILE soccar/soccar_ramps_1_vertices.bin
 
-SOCCAR_NAV_GRAPH BINARY_FILE soccar/soccar_navigation_graph.bin
-SOCCAR_NAV_NODES BINARY_FILE soccar/soccar_navigation_nodes.bin
-SOCCAR_NAV_NORMALS BINARY_FILE soccar/soccar_navigation_normals.bin
 
 HOOPS_CORNER_IDS BINARY_FILE hoops/hoops_corner_ids.bin
 HOOPS_CORNER_VERTICES BINARY_FILE hoops/hoops_corner_vertices.bin
